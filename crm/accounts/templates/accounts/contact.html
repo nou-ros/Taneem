@@ -1,0 +1,133 @@
+{% extends 'accounts/base.html' %}
+{% block content %}
+<style>
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: #1b1b1b;
+        font-family: "Montserrat", sans-serif;
+    }
+
+    body {
+        color: #333;
+        font-family: "Lato", sans-serif;
+    }
+
+    /*---contact form---*/
+
+    .contactus-one .contact-form .form-control {
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid #fff;
+        border-radius: 0px;
+        background-color: transparent;
+        color: #fff;
+        height: 50px;
+    }
+
+    .contactus-one .contact-form .form-control {
+        border-bottom: 1px solid #ccc;
+        box-shadow: none;
+    }
+
+    .contact-info>div>p {
+        margin-bottom: 10px;
+    }
+
+    .contactus-one .contact-info p i {
+        margin-right: 15px;
+        color: #ee2b63;
+    }
+
+    .map iframe {
+        pointer-events: none;
+        width: 100%;
+        border: none;
+    }
+
+    /* .map {
+        -webkit-filter: grayscale(100%);
+        filter: grayscale(100%);
+    } */
+
+    .map iframe {
+        pointer-events: none;
+        width: 100%;
+        border: none;
+    }
+
+    .contactus-one .dart-headingstyle-one .dart-heading:after {
+        left: 15px;
+    }
+
+    .normal-btn {
+        background: #c70a1a none repeat scroll 0 0;
+        border-radius: 5px;
+        color: #fff;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        text-transform: uppercase;
+    }
+</style>
+<br><br>
+<div class="row">
+    <div class="col-md-6 col-sm-6">
+        <div class="map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3649.8087590360788!2d90.34680091486223!3d23.825398591824275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c111001b2489%3A0x0!2zMjPCsDQ5JzMxLjQiTiA5MMKwMjAnNTYuNCJF!5e0!3m2!1sen!2sbd!4v1597811550334!5m2!1sen!2sbd" width="600" height="550" ></iframe>
+        </div>
+    </div>
+    <div class=" col-md-5 col-sm-6">
+        <div class="contact-block">
+            <div class="dart-headingstyle-one dart-mb-20">
+                <!--Style 1-->
+                <h2 class="dart-heading">Contact US</h2>
+            </div>
+
+            <div class="contact-form">
+                <!-- contact form -->
+                <form class="row" action="send_email.php" id="contact" name="contact" method="post">
+                    <div class="form-group col-md-6">
+                        <input type="text" class="form-control" name="InputName" id="InputName" placeholder="Your Name"
+                            required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="email" class="form-control" name="InputEmail" id="InputEmail"
+                            placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <input type="text" class="form-control" name="InputWeb" id="InputWeb"
+                            placeholder="Web Site (Optional)">
+                    </div>
+                    <div class="form-group col-md-12">
+                        <textarea class="form-control" name="InputMessage" id="InputMessage" rows="4"
+                            placeholder="Message" required></textarea>
+                    </div>
+                    <div class="col-md-12">
+                        <button name="submit" type="submit" class="btn normal-btn dart-btn-xs">SEND MESSAGE</button>
+                    </div>
+                </form>
+            </div>
+
+            <hr>
+
+            <div class=" row contact-info">
+                <div class="col-md-12 col-sm-12">
+                    <p class="addre"><i class="fa fa-map-marker"></i> Lorem ipsum dolor sit amet.</p>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                    <p class="phone-call"><i class="fa fa-phone"></i> <a href="tel:+10484579845">+12 345 789 1234</a>
+                    </p>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                    <p class="mail-id"><i class="fa fa-envelope"></i> contact@yourcompany.com</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

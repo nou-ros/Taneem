@@ -1,0 +1,35 @@
+{% extends 'accounts/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<style>
+    .profile_pic{
+        max-width: 180px;
+        max-height: 200px;
+        margin: 0 auto;
+        border-radius: 50%;
+    }
+</style>
+ <br>
+ <div class="row m-auto">
+     <div class="col-md-3">
+        <h3 class="text-center">Account Settings</h3>
+         <div class="card card-body">
+             <a href="{% url 'user' %}" class="btn btn-warning">Back to Main Dashboard</a>
+             <br>
+             <img src="{{request.user.customer.profile_pic.url}}" class="profile_pic" alt="">
+         </div>
+     </div>
+     
+     <div class="col-md-9">
+         <div class="card card-body">
+             <!-- as we are sending files/image so have to use enctype in form -->
+             <form action="" method="POST" enctype="multipart/form-data">
+                 {% csrf_token %}
+                    {{form|crispy}}
+                 <input class="btn btn-primary" type="Submit" name="Update Information">
+             </form>
+         </div>
+     </div>
+ </div>
+{% endblock %}
