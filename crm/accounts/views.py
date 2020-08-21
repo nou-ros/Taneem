@@ -194,7 +194,7 @@ def allCustomers(request):
 def createOrder(request, pk):
     # parent model then child model 
     # extra is the number of multiple form input
-    OrderFormSet = inlineformset_factory(Customer, Order, fields=('product', 'status'), extra=3)
+    OrderFormSet = inlineformset_factory(Customer, Order, fields=('product', 'status'), extra=2)
     customer = Customer.objects.get(id=pk)
     
     # form = OrderForm(initial={'customer':customer})
@@ -212,7 +212,7 @@ def createOrder(request, pk):
 
     context = {
         # 'form':form
-        'formset': formset
+        'form': formset
     }
     return render(request, 'accounts/order_form.html', context)
 

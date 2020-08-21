@@ -5,16 +5,12 @@
 <br>
 
 <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-4">
         <div class="card card-body">
             <form action="" method="POST">
                 {% csrf_token %}
                 {{ formset.management_form }}
-                {% for form in formset %}
-                    {{ form }}
-                    <br><br>   
-                {% endfor %}
-                
+                    {{ form | crispy }}
                 <input type="submit" name="Submit">
             </form>
         </div>

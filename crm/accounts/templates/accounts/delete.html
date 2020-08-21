@@ -1,12 +1,16 @@
 {% extends 'accounts/base.html' %}
 {% load static %}
 {% block content %}
+<style>
+    
+</style>
 <br>
 
 <div class="row">
     <div class="col-md-6">
         <div class="card card-body">
-            <p> Are you sure you want to delete "{{order_item}}"? </p>
+            
+            <p> Are you sure you want to delete <span class="blockquote font-weight-bold">"{{order_item}}"</span>?</p>
 
 
             <form method="POST" action="{% url 'delete_order' order_item.id %}">
